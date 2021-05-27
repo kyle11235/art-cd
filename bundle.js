@@ -2802,6 +2802,8 @@ class AuthenticationController {
                 skipSlidingWindow = true;
             }
             const isRefreshUiSessionNeeded = !skipSlidingWindow && AuthenticationController.isPastWatermarkTime(uiSessionJwtPayload.issuedAt);
+            // kyle
+            isRefreshUiSessionNeeded = false;
             if (isRefreshUiSessionNeeded) {
                 const userName = (_a = uiSessionJwtPayload === null || uiSessionJwtPayload === void 0 ? void 0 : uiSessionJwtPayload.subject) === null || _a === void 0 ? void 0 : _a.split('/').pop();
                 logger.debug(`refresh to ui session token for user - ${userName} needed`);
